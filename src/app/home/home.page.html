@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sample chat UI</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-stable">
+   <ion-list>
+    <ion-item  *ngFor="let message of chatMessages;"  class="message">
+      <div  class="message-bubble" [ngClass]="message.userid == 2 ? 'user-message':''">
+          <ion-label>
+            <h2>{{ message.name }}</h2>
+            <p>{{ message.message }}</p>
+            <p>{{message.time}}</p>
+          </ion-label>
+      </div>
+    </ion-item>
+   </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="chatbubbles"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-input placeholder="Type a message..."></ion-input>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="send"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
